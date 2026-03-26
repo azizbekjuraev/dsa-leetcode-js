@@ -131,9 +131,8 @@ class DoublyLinkedList {
 
   insert(index, value) {
     if (index === 0) return this.unshift(value);
-
-    let temp = this.get(index);
-    if (!temp) return this.push(value);
+    if (index === this.length) return this.push(value);
+    if (index < 0 || index > this.length) return false;
 
     const newNode = new Node(value);
 
